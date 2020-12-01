@@ -25,8 +25,6 @@ public class Sorteio {
     public void addParticipante(Participante part) {
         if(part.getPontuacao() >= pontuacaoMinima) {
             participantes.add(part);
-        }   else {
-            throw new RuntimeException("Participante não possui um pontuação maior ou igual a minima!");
         }
     }
     

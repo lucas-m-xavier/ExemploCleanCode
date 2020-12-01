@@ -1,5 +1,6 @@
 package ufes.exemplocleancode.DAO_Memory;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import ufes.exemplocleancode.entity.Participante;
@@ -31,6 +32,11 @@ public class Mapa implements Estrutura {
     @Override
     public void deleteParticipante(Participante p) {
         map.remove(p.getPontuacao(), p);
+    }
+
+    @Override
+    public ArrayList<Participante> getAllParticipantes() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

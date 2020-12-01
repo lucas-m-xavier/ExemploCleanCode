@@ -7,6 +7,14 @@ public class Vetor implements Estrutura {
 
     private ArrayList<Participante> array = new ArrayList<Participante>();
 
+    public Vetor() {
+    }
+    
+    @Override
+    public ArrayList<Participante> getAllParticipantes() {
+        return this.array;
+    }
+    
     @Override
     public void insertParticipante(Participante p) {
         array.add(p);
