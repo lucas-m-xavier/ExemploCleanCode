@@ -29,19 +29,19 @@ public class Main {
         vetorDeCandidatos.insertParticipante(new Participante("Rodrigo", "rodrigo@gmail.com", 22));
         vetorDeCandidatos.insertParticipante(new Participante("Sergio", "sergio@gmail.com", 6));
     
-        AdicionarParticipanteAoSorteio addpas = new AdicionarParticipanteAoSorteio(sorteio, vetorDeCandidatos);
-        addpas.addParticipantesAoSorteio();
+        AdicionarParticipanteAoSorteio addParticipanteAoSorteio = new AdicionarParticipanteAoSorteio(sorteio, vetorDeCandidatos);
+        addParticipanteAoSorteio.addParticipantesAoSorteio();
 
         RetornarVencedoresDoSorteio rvds = new RetornarVencedoresDoSorteio(sorteio); 
         List<Participante> vencedores = rvds.retornarVencedoresDoSorteio(1);
         
         int flag = 1;
         
-        for(Participante p : vencedores) {
+        for(Participante participante : vencedores) {
           System.out.println(flag++);
-          System.out.println("Nome: " + p.getNome());
-          System.out.println("Email: " + p.getEmail());
-          System.out.println("Score: " + p.getPontuacao());
+          System.out.println("Nome: " + participante.getNome());
+          System.out.println("Email: " + participante.getEmail());
+          System.out.println("Score: " + participante.getPontuacao());
           System.out.println("=======================");
         }
     }
