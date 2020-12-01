@@ -1,4 +1,4 @@
-package DAO_Memory;
+package ufes.exemplocleancode.DAO_Memory;
 
 import java.util.HashMap;
 import java.util.Map;
