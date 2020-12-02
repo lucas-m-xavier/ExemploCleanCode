@@ -6,7 +6,8 @@
 package ufes.exemplocleancode.main;
 
 import java.util.List;
-import ufes.exemplocleancode.DAO_Memory.Vetor;
+import ufes.exemplocleancode.DAO_Memory.Banco;
+import ufes.exemplocleancode.DAO_Memory.Oracle;
 import ufes.exemplocleancode.entity.Participante;
 import ufes.exemplocleancode.entity.Sorteio;
 import ufes.exemplocleancode.usecases.AdicionarParticipanteAoSorteio;
@@ -22,14 +23,14 @@ public class Main {
     public static void main(String[] args) {
         Sorteio sorteio = new CriarSorteio().criarSorteio(4);
     
-        Vetor vetorDeCandidatos = new Vetor();
-        vetorDeCandidatos.insertParticipante(new Participante("Valdomiro", "valdim@gmail.com", 8));
-        vetorDeCandidatos.insertParticipante(new Participante("Clovis", "clovis@gmail.com", 2));
-        vetorDeCandidatos.insertParticipante(new Participante("Amilton", "amilton@gmail.com", 9));
-        vetorDeCandidatos.insertParticipante(new Participante("Rodrigo", "rodrigo@gmail.com", 22));
-        vetorDeCandidatos.insertParticipante(new Participante("Sergio", "sergio@gmail.com", 6));
+        Banco banco = new Oracle();
+        banco.insertParticipante(new Participante("Valdomiro", "valdim@gmail.com", 8));
+        banco.insertParticipante(new Participante("Clovis", "clovis@gmail.com", 2));
+        banco.insertParticipante(new Participante("Amilton", "amilton@gmail.com", 9));
+        banco.insertParticipante(new Participante("Rodrigo", "rodrigo@gmail.com", 22));
+        banco.insertParticipante(new Participante("Sergio", "sergio@gmail.com", 6));
     
-        AdicionarParticipanteAoSorteio addParticipanteAoSorteio = new AdicionarParticipanteAoSorteio(sorteio, vetorDeCandidatos);
+        AdicionarParticipanteAoSorteio addParticipanteAoSorteio = new AdicionarParticipanteAoSorteio(sorteio, banco);
         addParticipanteAoSorteio.addParticipantesAoSorteio();
 
         RetornarVencedoresDoSorteio rvds = new RetornarVencedoresDoSorteio(sorteio); 

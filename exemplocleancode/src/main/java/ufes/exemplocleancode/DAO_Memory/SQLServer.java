@@ -1,18 +1,19 @@
 package ufes.exemplocleancode.DAO_Memory;
 
 import java.util.ArrayList;
+import java.util.List;
 import ufes.exemplocleancode.entity.Participante;
 
-public class Vetor implements Estrutura {
+public class SQLServer implements Banco {
 
-    private ArrayList<Participante> array = new ArrayList<Participante>();
+    private List<Participante> array = new ArrayList<Participante>();
 
-    public Vetor() {
+    public SQLServer() {
     }
     
     @Override
     public ArrayList<Participante> getAllParticipantes() {
-        return this.array;
+        return (ArrayList)this.array;
     }
     
     @Override

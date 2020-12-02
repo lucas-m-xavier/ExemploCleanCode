@@ -5,7 +5,7 @@
  */
 package ufes.exemplocleancode.usecases;
 
-import ufes.exemplocleancode.DAO_Memory.Vetor;
+import ufes.exemplocleancode.DAO_Memory.Banco;
 import ufes.exemplocleancode.entity.Participante;
 import ufes.exemplocleancode.entity.Sorteio;
 
@@ -17,16 +17,16 @@ public class AdicionarParticipanteAoSorteio {
     
     private final Sorteio sorteio;
     
-    private final Vetor vetor;
+    private final Banco banco;
 
-    public AdicionarParticipanteAoSorteio(Sorteio sorteio, Vetor vetor) {
+    public AdicionarParticipanteAoSorteio(Sorteio sorteio, Banco estrutura) {
         this.sorteio = sorteio;
-        this.vetor = vetor;
+        this.banco = estrutura;
     }
     
     public void addParticipantesAoSorteio() {
-        for(Participante p : vetor.getAllParticipantes()) {
-            Participante participante = new Participante(p.getEmail(), p.getNome(), p.getPontuacao());
+        for(Participante p : banco.getAllParticipantes()) {
+            Participante participante = new Participante(p.getNome(), p.getEmail(), p.getPontuacao());
             sorteio.addParticipante(participante);
         }
     }

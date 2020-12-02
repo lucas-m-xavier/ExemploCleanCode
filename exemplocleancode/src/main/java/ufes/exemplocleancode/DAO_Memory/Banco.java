@@ -3,7 +3,7 @@ package ufes.exemplocleancode.DAO_Memory;
 import java.util.ArrayList;
 import ufes.exemplocleancode.entity.Participante;
 
-public interface Estrutura {
+public interface Banco {
     
     public abstract ArrayList<Participante> getAllParticipantes();
 
